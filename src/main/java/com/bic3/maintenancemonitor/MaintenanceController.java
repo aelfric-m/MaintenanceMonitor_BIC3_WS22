@@ -14,11 +14,14 @@ public class MaintenanceController {
     }
 
     @GetMapping("/api/message/set")
-    public String setMessage(String m){
+    public String setMessage(String m) {
         messageHandler.setCurrentStatus(m);
         return "ok";
     }
 
-
-
+    @GetMapping("/api/message/reset")
+    public String resetMessage() {
+        messageHandler.setCurrentStatus(messageHandler.getDefaultStatus());
+        return "ok";
+    }
 }
