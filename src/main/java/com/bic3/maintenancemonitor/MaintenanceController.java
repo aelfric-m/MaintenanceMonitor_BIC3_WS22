@@ -13,5 +13,12 @@ public class MaintenanceController {
         return messageHandler.getCurrentStatus();
     }
 
+    @GetMapping("/api/message/set")
+    public String setMessage(String m){
+        messageHandler.setCurrentStatus(m);
+        return "ok";
+    }
+
+
 
 }
