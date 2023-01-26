@@ -6,12 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MaintenanceController {
 
-    private String defaultStatus = "Everything works as expected, nothing to worry, humans";
-    private String currentStatus = "Everything works as expected, nothing to worry, humans";
+    private MessageHandler messageHandler = new MessageHandler();
 
     @GetMapping("/api/message")
     public String displayCurrentStatus() {
-        return currentStatus;
+        return messageHandler.getCurrentStatus();
     }
 
 
